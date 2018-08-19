@@ -1,27 +1,106 @@
-# NgSuperHeroes
+# NG Super Heroes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
+## 1. HERO COMPONENT
 
-## Development server
+#### 1.1 Open the project, explore the structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### 1.2 Start the project -> `ng serve` -> open localhost
 
-## Code scaffolding
+#### 1.3 Create the hero component files
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### 1.4 Create a basic hero layout (photo, name, description, call button)
 
-## Build
+- static text
+- style encapsulation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### 1.5 The hero class model
 
-## Running unit tests
+- create the class (id, name, description, photo)
+- import it in the hero component
+- create an property hero on the component with the same properties as in the interface
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### 1.6 binding to the hero
 
-## Running end-to-end tests
+- Interpolation for name and description
+- property binding for image
+- event binding for Call button
+- basic pipe for uppercase name
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### 1.7 two way binding -> changing the hero name
 
-## Further help
+- add an input
+- use ngModel and [()] - two way binding to modify the hero name
+- add FormsModule to make it work
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<hr>
+
+## 2. HERO LIST
+
+#### 2.1 create a hero-list component
+
+- use the component in app-component
+- use the hero component in it
+
+#### 2.2 duplicate the hero component -> see the same component; how to change?
+
+#### 2.3 create a hero array in list component
+
+#### 2.4 hero object as input for hero component
+
+#### 2.5 add Inputs to hero components using array index
+
+#### 2.6 introduce \*ngFor to iterate list
+
+#### 2.7 filter by universe
+
+- add universe property to model
+- add universe to existing heroes
+- add selectedUniverse property -> start with all
+- introduce \*ngIf to filter heroes by universe -> modify the value to se results
+- add `<select>` with universe options
+- add change event -> modify the value of selected universe
+- introduce template refs to send the value directly
+
+#### 2.8 small version of list item
+
+- introduce new output ’small’ -> default value true
+- modify styles
+- add style bindings for name;
+- introduce \*ngIf to hide details and call button
+
+<hr>
+
+## 3. MASTER DETAIL
+
+#### 3.1 Add id property to hero model
+
+#### 3.2 Add id’s to heroes in array.
+
+#### 3.3 Add an ‘edit hero' button to the hero component -> alert the id
+
+#### 3.4 Introduce the Output event binding
+
+- create an edit Output -> event emitter of type number
+- on select, emit the number
+- in the list component, bind the edit event to a function
+
+#### 3.5 Show on screen the selected hero id for editing
+
+#### 3.6 Create the edit hero component
+
+- Input as the hero
+- form elements for name and description
+- close button
+- Output for close -> resets the edit index
+
+#### 3.7 Add detail component to list component
+
+- refactor editHero method to put selectedHero in
+- selectedHero as input -> error -> use \*ngIf
+- close as output -> reset selected hero -> editHero method with no arguments
+
+<hr>
+
+## 4. ROUTER
+
+4.1
