@@ -1,21 +1,21 @@
-<div class="hero">
+<div class="hero small">
   <div class="photo">
     <img [src]="hero.photo">
   </div>
   <div class="details">
     <div class="detail">
-      <span class="detail-title">Name</span>
+      <span class="detail-title" *ngIf="!small">Name</span>
       <p class="detail-text">{{hero.name | uppercase}}</p>
     </div>
-    <div class="detail">
+    <div class="detail" *ngIf="!small">
       <span class="detail-title">Description</span>
       <p class="detail-text">{{hero.description}}</p>
     </div>
   </div>
-  <button (click)="callHero()">CALL</button>
+  <button *ngIf="!small" (click)="callHero()">CALL</button>
 </div>
-<div>
+<!-- <div>
   <label>name:
     <input [(ngModel)]="hero.name" placeholder="name">
   </label>
-</div>
+</div> -->

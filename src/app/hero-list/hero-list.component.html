@@ -1,0 +1,8 @@
+<select #universe (change)="changeUniverse(universe.value)">
+  <option value="all">All</option>
+  <option value="dc">DC</option>
+  <option value="marvel">Marvel</option>
+</select>
+<div *ngFor="let hero of heroes">
+  <ngsh-hero *ngIf="selectedUniverse==='all' || selectedUniverse===hero.universe" [hero]="hero"></ngsh-hero>
+</div>

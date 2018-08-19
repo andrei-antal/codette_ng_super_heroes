@@ -18,3 +18,11 @@
 img {
   width: 150px;
 }
+
+.small img {
+  width: 50px;
+}
+
+.small {
+  width: 250px;
+}

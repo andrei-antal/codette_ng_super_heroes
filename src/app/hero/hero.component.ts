@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../model/hero';
 
 @Component({
@@ -7,12 +7,10 @@ import { Hero } from '../model/hero';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
-  hero: Hero = {
-    name: 'Batman',
-    description: `Tempor enim ea aliqua nulla occaecat. Elit ut veniam incididunt et.
-      Voluptate duis reprehenderit deserunt culpa anim laborum enim magna ut nulla reprehenderit proident.`,
-    photo: 'assets/hero/batman.jpg'
-  };
+  @Input()
+  hero: Hero;
+  @Input()
+  small = true;
   constructor() {}
 
   callHero() {
