@@ -12,7 +12,8 @@
       <p class="detail-text">{{hero.description}}</p>
     </div>
   </div>
-  <button *ngIf="!small" (click)="callHero()">CALL</button>
+  <button (click)="callHero()">CALL</button>
+  <button (click)="editHero()">EDIT HERO</button>
 </div>
 <!-- <div>
   <label>name:

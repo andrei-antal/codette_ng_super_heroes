@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Hero } from '../model/hero';
 
 @Component({
@@ -11,9 +11,16 @@ export class HeroComponent {
   hero: Hero;
   @Input()
   small = true;
+  @Output()
+  edit = new EventEmitter<number>();
+
   constructor() {}
 
   callHero() {
     alert(`${this.hero.name} has be called!`);
+  }
+
+  editHero() {
+    this.edit.emit(this.hero.id);
   }
 }
